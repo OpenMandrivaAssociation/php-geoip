@@ -10,7 +10,7 @@
 Summary:	Map IP address to geographic places
 Name:		php-%{modname}
 Version:	0.2.0
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/%{modname}/
@@ -35,6 +35,15 @@ and connection type. For more info, please visit Maxmind's website.
 perl -pi -e "s|/lib\b|/%{_lib}|g" config.m4
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 #%{_usrsrc}/php-devel/buildext %{modname} %{mod_src} %{mod_lib} %{mod_def}
 
@@ -66,5 +75,3 @@ EOF
 %doc ChangeLog README package*.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
