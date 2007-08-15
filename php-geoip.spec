@@ -9,12 +9,12 @@
 
 Summary:	Map IP address to geographic places
 Name:		php-%{modname}
-Version:	0.2.0
-Release:	%mkrel 8
+Version:	1.0.0
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/%{modname}/
-Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	GeoIP-devel >= 1.4.0
 Requires:	geoip >= 1.4.0
@@ -35,15 +35,7 @@ and connection type. For more info, please visit Maxmind's website.
 perl -pi -e "s|/lib\b|/%{_lib}|g" config.m4
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 #%{_usrsrc}/php-devel/buildext %{modname} %{mod_src} %{mod_lib} %{mod_def}
 
