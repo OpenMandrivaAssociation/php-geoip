@@ -9,7 +9,7 @@
 
 Summary:	Map IP address to geographic places
 Name:		php-%{modname}
-Version:	1.0.0
+Version:	1.0.1
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
@@ -64,6 +64,6 @@ EOF
 
 %files 
 %defattr(-,root,root)
-%doc ChangeLog README package*.xml
+%doc ChangeLog README package*.xml tests
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
