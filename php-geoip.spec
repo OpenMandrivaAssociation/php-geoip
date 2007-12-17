@@ -19,7 +19,6 @@ BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	GeoIP-devel >= 1.4.0
 Requires:	geoip >= 1.4.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This PHP extension allows you to find the location of an IP address - City,
