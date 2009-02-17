@@ -10,7 +10,7 @@
 Summary:	Map IP address to geographic places
 Name:		php-%{modname}
 Version:	1.0.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/%{modname}/
