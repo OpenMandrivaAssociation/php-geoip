@@ -14,7 +14,7 @@ Version:	1.1.0
 Release:	2
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/%{modname}/
+URL:		https://pecl.php.net/package/%{modname}/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	GeoIP-devel >= 1.4.0
