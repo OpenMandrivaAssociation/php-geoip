@@ -16,6 +16,11 @@ Group:		Development/PHP
 License:	PHP License
 URL:		https://pecl.php.net/package/%{modname}/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	GeoIP-devel >= 1.4.0
 Requires:	geoip >= 1.4.0
